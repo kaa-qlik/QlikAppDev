@@ -1,6 +1,6 @@
 
 SHEETS
-{"qInfo":{"qId":"STqLGE","qType":"sheet"},"qMeta":{"title":"My new sheet","description":"","_resourcetype":"app.object","_objecttype":"sheet","id":"STqLGE","approved":false,"published":false,"owner":"auth0|a08D000000Z1qIMIAZ","ownerId":"Zce40rRBB_Jr5Wvn41nb_-trb-t9g9S2","createdDate":"2024-04-23T09:43:12.262Z","modifiedDate":"2024-04-23T09:43:43.026Z","privileges":["read","update","delete","publish","change_owner"]},"qData":[]}
+{"qInfo":{"qId":"STqLGE","qType":"sheet"},"qMeta":{"title":"My new sheet","description":"","_resourcetype":"app.object","_objecttype":"sheet","id":"STqLGE","approved":false,"published":true,"owner":"auth0|a08D000000Z1qIMIAZ","ownerId":"Zce40rRBB_Jr5Wvn41nb_-trb-t9g9S2","createdDate":"2024-04-23T09:43:12.262Z","modifiedDate":"2024-04-23T10:00:11.171Z","publishTime":"2024-04-23T10:00:11.171Z","privileges":["read","publish","change_owner"]},"qData":[]}
 
 OBJECTS ON SHEETS
 {"name":"JjPEc","type":"auto-chart","col":0,"row":0,"colspan":12,"rowspan":6,"bounds":{"y":0,"x":0,"width":50,"height":50}}
