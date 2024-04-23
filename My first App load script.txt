@@ -1,0 +1,142 @@
+///$tab Main
+SET ThousandSep=',';
+SET DecimalSep='.';
+SET MoneyThousandSep=',';
+SET MoneyDecimalSep='.';
+SET MoneyFormat='$ ###0.00;-$ ###0.00';
+SET TimeFormat='h:mm:ss TT';
+SET DateFormat='M/D/YYYY';
+SET TimestampFormat='M/D/YYYY h:mm:ss[.fff] TT';
+SET FirstWeekDay=6;
+SET BrokenWeeks=1;
+SET ReferenceDay=0;
+SET FirstMonthOfYear=1;
+SET CollationLocale='en-US';
+SET CreateSearchIndexOnReload=1;
+SET MonthNames='Jan;Feb;Mar;Apr;May;Jun;Jul;Aug;Sep;Oct;Nov;Dec';
+SET LongMonthNames='January;February;March;April;May;June;July;August;September;October;November;December';
+SET DayNames='Mon;Tue;Wed;Thu;Fri;Sat;Sun';
+SET LongDayNames='Monday;Tuesday;Wednesday;Thursday;Friday;Saturday;Sunday';
+SET NumericalAbbreviation='3:k;6:M;9:G;12:T;15:P;18:E;21:Z;24:Y;-3:m;-6:μ;-9:n;-12:p;-15:f;-18:a;-21:z;-24:y';
+
+LIB CONNECT TO 'Analysts:Snowflake_Analysts';
+
+///$tab Zebra
+SQL USE ROLE SYSADMIN;
+
+LOAD hdr__COUNTRIES_key_id, 
+	COUNTRY_ID, 
+	COUNTRY_NAME; 
+//	REGION_ID;
+
+[COUNTRIES]:
+SELECT "hdr__COUNTRIES_key_id",
+	"COUNTRY_ID",
+	"COUNTRY_NAME",
+	"REGION_ID"
+FROM "KAA_QCDI"."data_mart_zebra"."COUNTRIES";
+
+SQL USE ROLE SYSADMIN;
+
+LOAD EMPLOYEE_ID, 
+	START_DATE, 
+	END_DATE, 
+	JOB_ID, 
+	DEPARTMENT_ID, 
+	JOB_HISTORY_DEPARTMENTS_relation_DEPARTMENT_ID, 
+	DEPARTMENT_NAME, 
+	JOB_HISTORY_DEPARTMENTS_relation_MANAGER_ID, 
+//	LOCATION_ID, 
+	JOB_HISTORY_EMPLOYEES_relation_EMPLOYEE_ID, 
+	FIRST_NAME, 
+	LAST_NAME, 
+	EMAIL, 
+	PHONE_NUMBER, 
+	HIRE_DATE, 
+	JOB_HISTORY_EMPLOYEES_relation_JOB_ID, 
+	SALARY, 
+	COMMISSION_PCT, 
+	JOB_HISTORY_EMPLOYEES_relation_MANAGER_ID, 
+	JOB_HISTORY_EMPLOYEES_relation_DEPARTMENT_ID, 
+	JOB_HISTORY_JOBS_relation_JOB_ID, 
+	JOB_TITLE, 
+	MIN_SALARY, 
+	MAX_SALARY, 
+	hdr__COUNTRIES_key_id, 
+	hdr__LOCATIONS_key_id, 
+	hdr__REGIONS_key_id;
+
+[JOB_HISTORY]:
+SELECT "EMPLOYEE_ID",
+	"START_DATE",
+	"END_DATE",
+	"JOB_ID",
+	"DEPARTMENT_ID",
+	"JOB_HISTORY_DEPARTMENTS_relation_DEPARTMENT_ID",
+	"DEPARTMENT_NAME",
+	"JOB_HISTORY_DEPARTMENTS_relation_MANAGER_ID",
+	"LOCATION_ID",
+	"JOB_HISTORY_EMPLOYEES_relation_EMPLOYEE_ID",
+	"FIRST_NAME",
+	"LAST_NAME",
+	"EMAIL",
+	"PHONE_NUMBER",
+	"HIRE_DATE",
+	"JOB_HISTORY_EMPLOYEES_relation_JOB_ID",
+	"SALARY",
+	"COMMISSION_PCT",
+	"JOB_HISTORY_EMPLOYEES_relation_MANAGER_ID",
+	"JOB_HISTORY_EMPLOYEES_relation_DEPARTMENT_ID",
+	"JOB_HISTORY_JOBS_relation_JOB_ID",
+	"JOB_TITLE",
+	"MIN_SALARY",
+	"MAX_SALARY",
+	"hdr__COUNTRIES_key_id",
+	"hdr__LOCATIONS_key_id",
+	"hdr__REGIONS_key_id"
+FROM "KAA_QCDI"."data_mart_zebra"."JOB_HISTORY";
+
+SQL USE ROLE SYSADMIN;
+
+LOAD hdr__LOCATIONS_key_id, 
+	LOCATION_ID, 
+	STREET_ADDRESS, 
+	POSTAL_CODE, 
+	CITY, 
+	STATE_PROVINCE; 
+//	COUNTRY_ID;
+
+[LOCATIONS]:
+SELECT "hdr__LOCATIONS_key_id",
+	"LOCATION_ID",
+	"STREET_ADDRESS",
+	"POSTAL_CODE",
+	"CITY",
+	"STATE_PROVINCE",
+	"COUNTRY_ID"
+FROM "KAA_QCDI"."data_mart_zebra"."LOCATIONS";
+
+SQL USE ROLE SYSADMIN;
+
+LOAD hdr__REGIONS_key_id, 
+	REGION_ID, 
+	REGION_NAME;
+
+[REGIONS]:
+SELECT "hdr__REGIONS_key_id",
+	"REGION_ID",
+	"REGION_NAME"
+FROM "KAA_QCDI"."data_mart_zebra"."REGIONS";
+
+DROP TABLE __skip_loading;
+///$tab exit
+exit script;
+///$tab KAs new section
+here is some working script
+
+wihiw
+w
+wpwjwjopwjw
+jw
+
+w
